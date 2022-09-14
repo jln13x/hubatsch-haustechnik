@@ -1,0 +1,32 @@
+---
+import Container from "../Container.astro";
+---
+
+<div class="absolute inset-0 grid place-items-center pointer-events-none">
+  <Container>
+    <div class="relative -z-20 h-full grid place-items-center">
+      <div class="relative">
+        <div
+          class="w-80 h-80 bg-brand-500 rounded-full blur-xl animate-blob absolute left-0"
+          style={{
+            animationDelay: "2000ms",
+            "--blob-x": "20px",
+            "--blob-y": "0px",
+            "--blob-scale": "0.9",
+          }}
+        >
+        </div>
+        <div
+          class="w-64 h-64 bg-brand-500/30 rounded-full blur-xl animate-blob absolute right-0 top-0"
+          style={{
+            animationDelay: "4000ms",
+            "--blob-x": "-20px",
+            "--blob-y": "0px",
+            "--blob-scale": "1.2",
+          }}
+        >
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>

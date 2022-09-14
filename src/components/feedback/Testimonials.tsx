@@ -53,7 +53,7 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="overflow-hidden w-full py-12" ref={emblaRef}>
+    <div className="overflow-hidden w-full pt-12" ref={emblaRef}>
       <div className="flex w-full grow">
         {testimonals.map((t, idx) => (
           <Testimonial
@@ -90,14 +90,13 @@ const Testimonial = ({
       className={`w-full md:w-1/3 rounded-md p-4 shrink-0 text-center transition-colors duration-300 ease-in-out cursor-grab ${
         isActive
           ? "text-white opacity-100 mx-auto"
-          : "text-neutral-400 opacity-40 "
+          : "text-neutral-400 opacity-40 hover:opacity-60 "
       }
     `}
       onClick={onClick}
     >
       <p className="tracking-wide">{text}</p>
       <div className="mt-4 flex flex-col items-center">
-        {/* <Ratings rating={rating} starHeight={20} starWidth={20} /> */}
         <p className="font-bold mt-1">- {author}</p>
       </div>
     </div>

@@ -1,0 +1,17 @@
+---
+import Container from "../Container.astro";
+import GoogleRating from "./GoogleRating.astro";
+import Testimonials from "./Testimonials";
+import Wave from "./Wave.astro";
+---
+
+<section class="pb-16 mt-96">
+  <div class="bg-black text-white">
+    <Container>
+      <GoogleRating />
+      <h2 class="text-center">Unsere Kunden sind begeistert</h2>
+      <Testimonials client:load />
+    </Container>
+  </div>
+  <Wave />
+</section>
