@@ -10,10 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^1.1.2",
     "@astrojs/tailwind": "^1.0.0",
     "astro": "^1.2.2",
     "embla-carousel": "^7.0.3",
     "embla-carousel-autoplay": "^7.0.3",
-    "embla-carousel-class-names": "^7.0.3"
+    "embla-carousel-class-names": "^7.0.3",
+    "embla-carousel-react": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6"
   }
 }

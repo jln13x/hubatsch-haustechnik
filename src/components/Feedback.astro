@@ -1,7 +1,7 @@
 ---
 import Container from "./Container.astro";
 import GoogleRating from "./GoogleRating.astro";
-import Testimonials from "./Testimonials.astro";
+import Testimonials from "./Testimonials";
 ---
 
 <section
@@ -14,6 +14,6 @@ import Testimonials from "./Testimonials.astro";
       <GoogleRating />
     </div>
     <h2 class="text-center">Unsere Kunden sind begeistert</h2>
-    <Testimonials />
+    <Testimonials client:visible />
   </Container>
 </section>
