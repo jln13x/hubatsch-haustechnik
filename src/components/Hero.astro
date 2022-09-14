@@ -1,0 +1,25 @@
+---
+import Link from "./Link.astro";
+---
+
+<div class="grid relative place-items-center h-screen max-h-screen">
+  <div class="absolute z-40 text-center text-white">
+    <h1 class="font-bold">
+      Rund um die Uhr <br />für Sie <span
+        class="text-transparent bg-clip-text bg-gradient-to-br from-brand-500 via-brand-700 to-brand-900"
+        >unter Strom</span
+      >
+    </h1>
+    <p
+      class="text-lg tracking-wide leading-7 mb-12 mt-4 max-w-xl text-neutral-300"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+      accusantium. Fugit illo deleniti aliquam delectus ratione consequatur cum
+      similique animi?
+    </p>
+
+    <Link href="/kontakt">Jetzt Kontakt aufnehmen</Link>
+  </div>
+  <img src="/hero.jpg" alt="Hero" class="object-cover h-screen w-screen" />
+  <div class="inset-0 absolute bg-black/80"></div>
+</div>

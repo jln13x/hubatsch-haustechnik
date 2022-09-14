@@ -1,0 +1,50 @@
+---
+import Container from "./Container.astro";
+import Altbau from "./icons/Altbau.astro";
+import Beleuchtung from "./icons/Beleuchtung.astro";
+import Check from "./icons/Check.astro";
+import Neubau from "./icons/Neubau.astro";
+import Sicherheit from "./icons/Sicherheit.astro";
+import Link from "./Link.astro";
+import NoServiceFound from "./NoServiceFound.astro";
+import ServiceCard from "./ServiceCard.astro";
+---
+
+<section class="bg-white py-12">
+  <Container>
+    <div class="text-center">
+      <h2>Wir bringen Licht ins Haus</h2>
+
+      <p class="mt-4 text-base text-gray-700 sm:mt-8">
+        Lorem ipsum dolor sit amet, consectetur adipis elit
+      </p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-12">
+      <ServiceCard
+        text="Innenbeleuchtung, Außen­beleuchtung "
+        title="Beleuchtung"
+      >
+        <Beleuchtung />
+      </ServiceCard>
+
+      <ServiceCard text="Lorem" title="Neubau">
+        <Neubau />
+      </ServiceCard>
+
+      <ServiceCard text="Lorem" title="Sicherheit">
+        <Sicherheit />
+      </ServiceCard>
+
+      <ServiceCard text="Lorem" title="Altbau">
+        <Altbau />
+      </ServiceCard>
+
+      <ServiceCard text="Lorem" title="Geräteprüfung">
+        <Check set:text="foo" />
+      </ServiceCard>
+    </div>
+
+    <NoServiceFound />
+  </Container>
+</section>

@@ -1,0 +1,19 @@
+---
+import Container from "./Container.astro";
+import GoogleRating from "./GoogleRating.astro";
+import Testimonials from "./Testimonials.astro";
+---
+
+<section
+  class="bg-gradient-to-br from-black via-black/95 to-black mt-96 text-white pb-16"
+>
+  <Container>
+    <div
+      class="bg-black -translate-y-[50%] p-4 flex items-center justify-center shadow-xl shadow-neutral-900/60 rounded-md"
+    >
+      <GoogleRating />
+    </div>
+    <h2 class="text-center">Unsere Kunden sind begeistert</h2>
+    <Testimonials />
+  </Container>
+</section>

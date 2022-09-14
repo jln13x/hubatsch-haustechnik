@@ -1,0 +1,15 @@
+---
+import Star from "./icons/Star.astro";
+
+export interface Props {
+  rating: number;
+  starHeight: number;
+  starWidth: number;
+}
+
+const { rating, starHeight, starWidth } = Astro.props;
+---
+
+<div class="flex">
+  {[...Array(rating)].map(() => <Star height={starHeight} width={starWidth} />)}
+</div>

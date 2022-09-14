@@ -1,0 +1,20 @@
+---
+import Container from "./Container.astro";
+import Logo from "./Logo.astro";
+import NavItem from "./NavItem.astro";
+---
+
+<header class="bg-black/90 py-6 fixed inset-x-0 z-50">
+  <Container>
+    <div class="flex items-center justify-between">
+      <Logo />
+      <nav class="grow flex justify-center text-white">
+        <ul class="flex">
+          <li>
+            <NavItem href="/" title="Start" />
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </Container>
+</header>

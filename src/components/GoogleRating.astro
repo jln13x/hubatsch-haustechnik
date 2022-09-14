@@ -1,0 +1,17 @@
+---
+import Ratings from "./Ratings.astro";
+
+const url =
+  "https://www.google.de/search?q=Hubatsch+Haustechnik%2C+Feldhusstra%C3%9Fe+8%2C+27755+Delmenhorst&sxsrf=ALiCzsZmvj2RSEoUlql-JBBTCmE9AP8O3A%3A1663100969691&ei=KeggY_LaKaCBi-gP9_qZqAY&ved=0ahUKEwiyk5j0zZL6AhWgwAIHHXd9BmUQ4dUDCA4&uact=5&oq=Hubatsch+Haustechnik%2C+Feldhusstra%C3%9Fe+8%2C+27755+Delmenhorst&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzoHCCMQsAMQJzoOCC4QxwEQrwEQsAMQywE6BwgAEB4QsAM6BAgjECc6CwguEIAEEMcBENEDOgUILhCABDoFCAAQgAQ6BQgAEJECOggILhCABBDUAjoLCC4QxwEQrwEQkQI6CggAEIAEEIcCEBQ6BwgAEIAEEAo6CwguEMcBEK8BEMsBOgUIABDLAToGCAAQHhAWOgIIJjoKCC4QxwEQrwEQEzoICAAQHhAWEBM6BQghEKABOgQIIRAVOgcIIRCgARAKSgQIQRgBSgQIRhgAULAEWNdVYNJZaAVwAHgBgAGbAYgBjSqSAQU0NS4xNZgBAKABAcgBBMABAQ&sclient=gws-wiz-serp#lrd=0x47b0d5a69db68d27:0x7e117fdd18760488,1,,,";
+---
+
+<div class="flex items-center space-x-4 py-16 text-white">
+  <p class="text-4xl font-bold">5.0</p>
+
+  <Ratings rating={5} starHeight={70} starWidth={70} />
+  <p class="text-xl">
+    aus <a target="_blank" href={url} class="underline underline-offset-2"
+      >70 Bewertungen</a
+    > bei Google
+  </p>
+</div>
