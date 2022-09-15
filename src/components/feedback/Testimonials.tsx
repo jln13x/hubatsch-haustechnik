@@ -53,7 +53,7 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="overflow-hidden w-full pt-12" ref={emblaRef}>
+    <div className="overflow-hidden w-full" ref={emblaRef}>
       <div className="flex w-full grow">
         {testimonals.map((t, idx) => (
           <Testimonial
