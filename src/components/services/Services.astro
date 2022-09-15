@@ -20,35 +20,81 @@ import ServiceCard from "./ServiceCard.astro";
       </p>
     </div>
 
-    <div class="grid grid-cols-3 gap-12">
-      <ServiceCard
-        text="Innenbeleuchtung, Außen­beleuchtung "
-        title="Beleuchtung"
-      >
-        <Beleuchtung />
-      </ServiceCard>
+    <div class="grid grid-cols-3 gap-12 cards">
+      <div class="hide">
+        <ServiceCard
+          text="Innenbeleuchtung, Außenbeleuchtung"
+          title="Beleuchtung"
+        >
+          <Beleuchtung />
+        </ServiceCard>
+      </div>
 
-      <ServiceCard text="Lorem" title="Neubau">
-        <Neubau />
-      </ServiceCard>
+      <div class="hide">
+        <ServiceCard text="Lorem" title="Neubau">
+          <Neubau />
+        </ServiceCard>
+      </div>
 
-      <ServiceCard text="Lorem" title="Sicherheit">
-        <Sicherheit />
-      </ServiceCard>
+      <div class="hide">
+        <ServiceCard text="Lorem" title="Sicherheit">
+          <Sicherheit />
+        </ServiceCard>
+      </div>
 
-      <ServiceCard text="Lorem" title="Altbau">
-        <Altbau />
-      </ServiceCard>
+      <div class="hide">
+        <ServiceCard text="Lorem" title="Altbau">
+          <Altbau />
+        </ServiceCard>
+      </div>
 
-      <ServiceCard text="Lorem" title="Geräteprüfung">
-        <Check />
-      </ServiceCard>
+      <div class="hide">
+        <ServiceCard text="Lorem" title="Geräteprüfung">
+          <Check />
+        </ServiceCard>
+      </div>
 
-      <ServiceCard text="Lorem" title="Notdienst">
-        <Notdienst />
-      </ServiceCard>
+      <div class="hide">
+        <ServiceCard text="Lorem" title="Notdienst">
+          <Notdienst />
+        </ServiceCard>
+      </div>
     </div>
-
     <NoServiceFound />
   </Container>
 </section>
+
+<script>
+  const cardsContainer = document.querySelector<HTMLElement>(".cards");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target
+          .querySelectorAll<HTMLElement>(".hide")
+          .forEach((c, idx) => {
+            c.style.setProperty("--delay", `${idx * 200}ms`);
+
+            if (entry.isIntersecting) c.classList.add("show");
+          });
+      });
+    },
+    {
+      threshold: 0.25,
+    }
+  );
+
+  if (cardsContainer) {
+    observer.observe(cardsContainer);
+  }
+</script>
+
+<style>
+  .hide {
+    @apply opacity-0 transition-all duration-500 ease-in-out blur-md scale-150 -translate-x-full delay-[var(--delay)];
+  }
+
+  .show {
+    @apply opacity-100 transition-all duration-500 ease-in-out blur-none scale-100  -translate-x-0 delay-[var(--delay)];
+  }
+</style>

@@ -1,7 +1,7 @@
 ---
 import Container from "../Container.astro";
 import GoogleRating from "./GoogleRating.astro";
-import Testimonials from "./Testimonials";
+import Testimonials from "./Testimonials.astro";
 import Wave from "./Wave.astro";
 ---
 
@@ -19,7 +19,7 @@ import Wave from "./Wave.astro";
     <Container>
       <h2 class="text-center">Unsere Kunden sind begeistert</h2>
       <GoogleRating />
-      <Testimonials client:load />
+      <Testimonials />
     </Container>
   </div>
   <Wave />
