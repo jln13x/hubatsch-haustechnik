@@ -4,6 +4,7 @@ import Altbau from "../icons/Altbau.astro";
 import Beleuchtung from "../icons/Beleuchtung.astro";
 import Check from "../icons/Check.astro";
 import Neubau from "../icons/Neubau.astro";
+import Notdienst from "../icons/Notdienst.astro";
 import Sicherheit from "../icons/Sicherheit.astro";
 import NoServiceFound from "./NoServiceFound.astro";
 import ServiceCard from "./ServiceCard.astro";
@@ -40,7 +41,11 @@ import ServiceCard from "./ServiceCard.astro";
       </ServiceCard>
 
       <ServiceCard text="Lorem" title="Geräteprüfung">
-        <Check set:text="foo" />
+        <Check />
+      </ServiceCard>
+
+      <ServiceCard text="Lorem" title="Notdienst">
+        <Notdienst />
       </ServiceCard>
     </div>
 
