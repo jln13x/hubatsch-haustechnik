@@ -46,8 +46,9 @@ const testimonals = [
 <script>
   import Embla from "embla-carousel";
   import SnapClass from "embla-carousel-snap-class";
+  import Autoplay from "embla-carousel-autoplay";
 
-  const emblaContainer = document.querySelector(".embla") as HTMLElement;
+  const emblaContainer = document.querySelector<HTMLElement>(".embla");
 
   if (emblaContainer) {
     const embla = Embla(
@@ -55,7 +56,7 @@ const testimonals = [
       {
         loop: true,
       },
-      [SnapClass()]
+      [SnapClass(), Autoplay()]
     );
 
     embla.slideNodes().forEach((slide, idx) => {
