@@ -2,13 +2,16 @@
 export interface Props {
   src: string;
   alt: string;
+  href: string;
 }
 
-const { src, alt } = Astro.props;
+const { src, alt, href } = Astro.props;
 ---
 
-<div
+<a
   class="opacity-40 grayscale hover:grayscale-0 hover:opacity-100 w-[15%] h-20 flex justify-center items-center bg-black/80 rounded-xl p-3"
+  href={href}
+  target="_blank"
 >
   <img src={src} alt={alt} class="h-full w-full object-contain" />
-</div>
+</a>
