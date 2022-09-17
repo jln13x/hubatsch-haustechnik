@@ -1,1 +1,13 @@
-<img src="/company-logo.svg" alt="company logo" width="160"  />
+---
+export interface Props {
+  width: number;
+}
+
+const { width } = Astro.props;
+---
+
+<img
+  src="/company-logo.svg"
+  alt="Logo von Hubatsch Haustechnik"
+  width={width}
+/>

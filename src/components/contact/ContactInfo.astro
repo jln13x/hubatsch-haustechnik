@@ -1,0 +1,36 @@
+---
+import Mail from "../icons/Mail.astro";
+import Phone from "../icons/Phone.astro";
+import Pin from "../icons/Pin.astro";
+---
+
+<div
+  class="flex text-center justify-center bg-black text-neutral-300 text-lg rounded-xl p-4 space-y-2 flex-col ml-auto -translate-y-8 shadow-xl shadow-neutral-800 bg-opacity-95 mr-4"
+>
+  <div class="flex space-x-1.5 items-center">
+    <Phone />
+    <a
+      href="tel:4942215848114"
+      class="hover:underline hover:underline-offset-4 hover:decoration-brand-500"
+      >+49 (4221) 58 48 114</a
+    >
+  </div>
+  <div class="flex space-x-1.5 items-center">
+    <Mail />
+    <a
+      href="mailto:info@hubatsch-haustechnik.de"
+      class="hover:underline hover:underline-offset-4 hover:decoration-brand-500"
+    >
+      info@hubatsch-haustechnik.de</a
+    >
+  </div>
+
+  <div class="flex space-x-1.5 items-center">
+    <Pin />
+    <a
+      class="hover:underline hover:underline-offset-4 hover:decoration-brand-500"
+      href="https://www.google.com/maps/place/Feldhusstra%C3%9Fe+8,+27755+Delmenhorst/@53.0182001,8.6482677,17z/data=!4m13!1m7!3m6!1s0x47b0d444c0c8ec5f:0x7e81dce6148072ab!2sFeldhusstra%C3%9Fe+8,+27755+Delmenhorst!3b1!8m2!3d53.0182001!4d8.6504564!3m4!1s0x47b0d444c0c8ec5f:0x7e81dce6148072ab!8m2!3d53.0182001!4d8.6504564"
+      target="_blank">Feldhusstraße 8 - 27755 Delmenhorst</a
+    >
+  </div>
+</div>

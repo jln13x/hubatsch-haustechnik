@@ -1,0 +1,38 @@
+---
+import Container from "../Container.astro";
+import PartnerLogo from "./PartnerLogo.astro";
+---
+
+<div class="translate-y-12">
+  <Container>
+    <div
+      class="bg-gradient-to-b from-neutral-900 to-black p-8 rounded-xl shadow-md bg-opacity-90 shadow-white/5 relative z-10"
+    >
+      <p class="text-neutral-400 text-center">
+        <strong class="text-brand-500 font-bold">Hubatsch Haustechnik</strong> ist
+        der offizielle Partner der Stadt <a
+          href="https://www.delmenhorst.de/"
+          target="_blank"
+          class="font-medium text-white">Delmenhorst</a
+        > und sorgt unter anderem dafür, dass Veranstaltungen mit Strom versorgt
+        werden können. Ebenfalls sind wir der direkte Ansprechpartner für den <a
+          href="https://www.rhododendronparkbremen.de/parkteile/botanischer-garten/"
+          target="_blank"
+          class="font-medium text-white">botanischen Garten in Bremen</a
+        > und im Falle eines Notfalls wie z.B. Stromausfall sorgen wir dafür, dass
+        das Leben der Pflanzen aufrecht erhalten werden kann.
+      </p>
+
+      <p class="mt-16 text-center text-neutral-200 text-xl font-bold">
+        Unsere starken Partner
+      </p>
+      <div class="flex w-full mt-6 justify-around">
+        <PartnerLogo alt="Logo Christoffers" src="/christoffers.svg" />
+        <PartnerLogo alt="Logo Hermes" src="/hermes.png" />
+        <PartnerLogo alt="Logo Würth" src="/wuerth.svg" />
+        <PartnerLogo alt="Logo Sport Duwe" src="/sport-duwe.svg" />
+        <PartnerLogo alt="Logo Indexa" src="/indexa.gif" />
+      </div>
+    </div>
+  </Container>
+</div>
