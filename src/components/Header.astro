@@ -4,17 +4,35 @@ import Logo from "./Logo.astro";
 import NavItem from "./NavItem.astro";
 ---
 
-<header class="bg-black/90 py-6 fixed inset-x-0 z-50 rounded-b-[80px]">
+<header class="bg-black/40 py-6 absolute inset-x-0 z-50 rounded-b-[80px]">
   <Container>
-    <div class="flex items-center justify-between">
+    <div class="flex items-center">
       <Logo width={160} />
-      <nav class="grow flex justify-center text-white">
-        <ul class="flex">
+      <nav class="grow flex justify-end text-white">
+        <ul class="flex space-x-8">
           <li>
             <NavItem href="/" title="Start" />
+          </li>
+          <li>
+            <NavItem href="#leistungen" title="Leistungen" />
+          </li>
+          <li>
+            <NavItem href="#rezensionen" title="Rezensionen" />
+          </li>
+          <li>
+            <NavItem href="#kontakt" title="Kontakt" />
+          </li>
+          <li>
+            <NavItem href="/" title="Jobs" />
           </li>
         </ul>
       </nav>
     </div>
   </Container>
 </header>
+
+<script>
+  const navItems = document.querySelectorAll("nav a");
+
+  console.log(navItems);
+</script>
