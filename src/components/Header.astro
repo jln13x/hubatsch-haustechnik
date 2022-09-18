@@ -8,10 +8,10 @@ import NavItem from "./NavItem.astro";
 >
   <Container>
     <div class="flex items-center">
-      <div class="w-28 sm:w-40 shrink-0">
+      <div class="w-28 md:w-40 shrink-0">
         <img src="/company-logo.svg" alt="Logo von Hubatsch Haustechnik" />
       </div>
-      <nav class="justify-end text-white hidden md:flex">
+      <nav class="justify-end text-white hidden md:flex md:ml-auto">
         <ul class="flex space-x-8">
           <li>
             <NavItem href="/" title="Start" />
@@ -31,7 +31,7 @@ import NavItem from "./NavItem.astro";
         </ul>
       </nav>
 
-      <div id="menu-nav" class="ml-auto">
+      <div id="menu-nav" class="ml-auto md:hidden">
         <button
           class="p-2 text-xs flex space-x-2 flex-col items-center rounded-xl space-y-2 ml-auto"
           title="Navigationsmenü öffnen"
@@ -159,9 +159,8 @@ import NavItem from "./NavItem.astro";
 
   const navItems = document.querySelectorAll<HTMLElement>("#menu-nav nav a");
 
+  // close the menu
   navItems.forEach((item) => {
     item.addEventListener("click", menuListener);
   });
-
-  
 </script>
