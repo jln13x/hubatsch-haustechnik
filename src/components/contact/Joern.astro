@@ -2,30 +2,32 @@
 import ContactInfo from "./ContactInfo.astro";
 ---
 
-<div class="flex flex-col w-[40%]">
+<div class="flex flex-col w-full lg:w-[60%] xl:w-[40%] lg:mt-0">
   <div
-    class="flex bg-neutral-50 rounded-xl w-full h-72 pl-8 drop-shadow-2xl shadow-inner relative"
+    class="flex rounded-xl w-full p-4 drop-shadow-lg shadow-inner bg-neutral-50 relative"
   >
-    <div class="grow grid place-items-center">
-      <div>
-        <p class="text-lg">
-          Durch unsere jahrelange Erfahrung im Handwerk sind Sie bei uns in den
-          besten Händen. Wir führen sämtliche Arbeiten rund um die Uhr aus und
-          geben selbstverständlich auch Hilfestellung bei der Planung für ihr
-          eigenes Heim.
-        </p>
-        <p class="font-bold text-brand-500 mt-2">Jörn Hubatsch</p>
-        <p class="text-sm">Geschäftsführer</p>
-      </div>
+    <div class="text-sm xs:text-base md:text-lg">
+      <p>
+        Durch unsere jahrelange Erfahrung im Handwerk sind Sie bei uns in den
+        besten Händen. Wir führen sämtliche Arbeiten rund um die Uhr aus und
+        geben selbstverständlich auch Hilfestellung bei der Planung für ihr
+        eigenes Heim.
+      </p>
+      <p class="font-bold text-brand-500 mt-2">Jörn Hubatsch</p>
+      <p class="text-xs xs:text-sm">Geschäftsführer</p>
     </div>
-    <img
-      src="huby.png"
-      alt="Joern"
-      width={1405}
-      height={1676}
-      class="sticky h-[150%] w-auto bottom-0 -translate-y-[33%] drop-shadow-2xl"
-    />
-  </div>
 
+    <div
+      class="h-full w-[40%] xs:w-[30%] md:w-[25%] -mr-4 mt-auto -mb-4 shrink-0 sm:-mt-[20%] lg:w-[30%] lg:-mt-[10%] xl:w-[40%] xl:-mt-[9%] 2xl:w-[40%] 2xl:-mt-[28%]"
+    >
+      <img
+        src="huby.png"
+        alt="Joern"
+        width={1405}
+        height={1676}
+        class="drop-shadow-lg"
+      />
+    </div>
+  </div>
   <ContactInfo />
 </div>

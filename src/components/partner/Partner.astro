@@ -6,9 +6,9 @@ import PartnerLogo from "./PartnerLogo.astro";
 <section class="translate-y-12" id="partner">
   <Container>
     <div
-      class="bg-gradient-to-b from-neutral-900 to-black p-8 rounded-xl shadow-md bg-opacity-90 shadow-white/5 relative z-10"
+      class="bg-gradient-to-b from-neutral-900 to-black py-4 px-2 md:p-8 rounded-xl shadow-md bg-opacity-90 border-b-brand-500 border-b-2 relative z-10"
     >
-      <p class="text-neutral-400 text-center">
+      <p class="text-neutral-400 text-center text-xs md:text-base">
         <strong class="text-brand-500 font-bold">Hubatsch Haustechnik</strong> ist
         der offizielle Partner der Stadt <a
           href="https://www.delmenhorst.de/"
@@ -23,10 +23,10 @@ import PartnerLogo from "./PartnerLogo.astro";
         das Leben der Pflanzen aufrecht erhalten werden kann.
       </p>
 
-      <p class="mt-16 text-center text-neutral-200 text-xl font-bold">
+      <p class="mt-8 md:mt-16 text-center text-neutral-200 text-lg md:text-xl font-bold">
         Unsere starken Partner
       </p>
-      <div class="flex w-full mt-6 justify-around">
+      <div class="grid grid-cols-3 place-items-center gap-4 md:gap-0 md:grid-cols-5 mt-4 md:mt-8 justify-around">
         <PartnerLogo
           alt="Logo Christoffers"
           src="/christoffers.svg"
@@ -55,4 +55,4 @@ import PartnerLogo from "./PartnerLogo.astro";
       </div>
     </div>
   </Container>
-</div>
+</section>

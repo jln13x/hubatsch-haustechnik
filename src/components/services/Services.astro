@@ -10,20 +10,21 @@ import NoServiceFound from "./NoServiceFound.astro";
 import ServiceCard from "./ServiceCard.astro";
 ---
 
-<section class="bg-white py-40" id="leistungen">
+<section class="bg-white py-10 md:py-40" id="leistungen">
   <Container>
     <div class="text-center">
       <h2>Wir bringen Licht ins Haus</h2>
 
       <p class="mt-4 text-base text-gray-700 sm:mt-8">
-        Lorem ipsum dolor sit amet, consectetur adipis elit
+        Unsere Leistungen umfassen eine Vielzahl an Bereichen. Ihr Experte für
+        Haustechnik und darüber hinaus.
       </p>
     </div>
 
-    <div class="grid grid-cols-3 gap-12 cards">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 cards mt-8">
       <div class="hide">
         <ServiceCard
-          text="Innenbeleuchtung, Außenbeleuchtung"
+          text="Innenbeleuchtung, Außenbeleuchtung Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo sunt voluptatibus quia laboriosam magni voluptas quo culpa incidunt."
           title="Beleuchtung"
         >
           <Beleuchtung />
@@ -31,31 +32,46 @@ import ServiceCard from "./ServiceCard.astro";
       </div>
 
       <div class="hide">
-        <ServiceCard text="Lorem" title="Neubau">
+        <ServiceCard
+          text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam ab non dolorum esse temporibus placeat. Assumenda eligendi est facere"
+          title="Neubau"
+        >
           <Neubau />
         </ServiceCard>
       </div>
 
       <div class="hide">
-        <ServiceCard text="Lorem" title="Sicherheit">
+        <ServiceCard
+          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus nostrum quasi, optio quisquam iusto, Et, pariatur placeat corrupti beatae rem perspiciatis, minus veniam ducimus laudantium, hic officiis. Beatae?"
+          title="Sicherheit"
+        >
           <Sicherheit />
         </ServiceCard>
       </div>
 
       <div class="hide">
-        <ServiceCard text="Lorem" title="Altbau">
+        <ServiceCard
+          text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta repellendus aspernatur dolor?"
+          title="Altbau"
+        >
           <Altbau />
         </ServiceCard>
       </div>
 
       <div class="hide">
-        <ServiceCard text="Lorem" title="Geräteprüfung">
+        <ServiceCard
+          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio rem ut culpa impedit adipisci possimus dolore molestias nulla illum nisi."
+          title="Geräteprüfung"
+        >
           <Check />
         </ServiceCard>
       </div>
 
       <div class="hide">
-        <ServiceCard text="Lorem" title="Notdienst">
+        <ServiceCard
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores officiis dignissimos labore facere harum quam."
+          title="Notdienst"
+        >
           <Notdienst />
         </ServiceCard>
       </div>
@@ -80,7 +96,7 @@ import ServiceCard from "./ServiceCard.astro";
       });
     },
     {
-      threshold: 0.25,
+      threshold: 0.05,
     }
   );
 
@@ -91,7 +107,7 @@ import ServiceCard from "./ServiceCard.astro";
 
 <style>
   .hide {
-    @apply opacity-0 transition-all duration-500 ease-in-out blur-md scale-150 -translate-x-full delay-[var(--delay)];
+    @apply opacity-0 transition-all duration-500 ease-in-out blur-md scale-150 -translate-x-full delay-[var(--delay)] h-full;
   }
 
   .show {

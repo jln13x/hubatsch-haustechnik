@@ -1,14 +1,15 @@
 ---
 import Container from "./Container.astro";
-import Logo from "./Logo.astro";
 import NavItem from "./NavItem.astro";
 ---
 
-<header class="bg-black/40 py-6 absolute inset-x-0 z-50 rounded-b-[80px]">
+<header class="bg-black/40 py-6 absolute inset-x-0 z-50">
   <Container>
     <div class="flex items-center">
-      <Logo width={160} />
-      <nav class="grow flex justify-end text-white">
+      <div class="w-28 sm:w-40 shrink-0">
+        <img src="/company-logo.svg" alt="Logo von Hubatsch Haustechnik" />
+      </div>
+      <nav class="justify-end text-white hidden md:flex">
         <ul class="flex space-x-8">
           <li>
             <NavItem href="/" title="Start" />

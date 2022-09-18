@@ -22,18 +22,9 @@ const { title } = Astro.props;
   <body>
     <slot />
     <style is:global>
-      h1 {
-        @apply text-6xl;
-      }
-
       h2 {
-        @apply text-5xl;
+        @apply text-3xl md:text-5xl;
       }
-
-      h3 {
-        @apply text-2xl;
-      }
-
       html {
         @apply scroll-smooth;
       }

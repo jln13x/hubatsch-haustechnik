@@ -1,24 +1,31 @@
 ---
+import Container from "./Container.astro";
 import Link from "./Link.astro";
 ---
 
-<section class="grid relative place-items-center h-screen max-h-screen" id="start">
-  <div class="absolute z-40 text-center text-white">
-    <h1 class="font-bold">
-      Rund um die Uhr <br />für Sie <span
-        class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-brand-500"
-        >unter Strom</span
+<section
+  class="grid relative place-items-center h-screen max-h-screen"
+  id="start"
+>
+  <div class="absolute z-40 text-center text-white mt-[10vh]">
+    <Container>
+      <h1
+        class="font-bold text-4xl xs:text-5xl sm:text-7xl lg:text-8xl leading-none tracking-tight sm:mb-4 md:mx-auto"
       >
-    </h1>
-    <p
-      class="text-lg tracking-wide leading-7 mb-12 mt-4 max-w-xl text-neutral-300"
-    >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      accusantium. Fugit illo deleniti aliquam delectus ratione consequatur cum
-      similique animi?
-    </p>
+        Rund um die Uhr <br />für Sie <span class="text-brand-500"
+          >unter Strom</span
+        >
+      </h1>
+      <p
+        class="text-lg sm:text-xl lg:text-2xl tracking-wide leading-7 mb-12 mt-4 max-w-3xl mx-auto text-neutral-400"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+        accusantium. Fugit illo deleniti aliquam delectus ratione consequatur
+        cum similique animi?
+      </p>
 
-    <Link href="/kontakt">Jetzt Kontakt aufnehmen</Link>
+      <Link href="#kontakt">Jetzt Kontakt aufnehmen</Link>
+    </Container>
   </div>
   <img src="/hero.jpg" alt="Hero" class="object-cover h-screen w-screen" />
   <div class="inset-0 absolute bg-black/80"></div>
