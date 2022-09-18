@@ -11,7 +11,7 @@ const { rating } = Astro.props as Props;
     [...Array(rating)].map((_, idx) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="text-brand-500  h-12 w-12 transition-all delay-[var(--delay)]"
+        class="text-brand-500  [&.show]:visible [&.show]:translate-y-0 [&.show]:translate-x-0 [&.show]:scale-100 [&.show]:opacity-100 invisible h-12 w-12 translate-y-full translate-x-full scale-[25] opacity-0 transition-all delay-[var(--delay)]"
         viewBox="0 0 20 20"
         fill="currentColor"
         style={{ "--delay": `${idx * 200}ms` }}
@@ -29,7 +29,9 @@ const { rating } = Astro.props as Props;
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+          entry.target
+            .querySelectorAll("svg")
+            .forEach((s) => s.classList.add("show"));
         }
       });
     },
@@ -42,13 +44,3 @@ const { rating } = Astro.props as Props;
     observer.observe(ratingsContainer);
   }
 </script>
-
-<style>
-  svg {
-    @apply invisible translate-y-full translate-x-full scale-150 opacity-0;
-  }
-
-  .show svg {
-    @apply visible translate-y-0 translate-x-0 scale-100 opacity-100;
-  }
-</style>
