@@ -3,35 +3,63 @@
     Füllen Sie das Kontaktformular aus und wir werden uns umgehend bei Ihnen
     melden.
   </p>
-  <div class="rounded-md h-full flex flex-col space-y-4 mt-4">
+  <form class="h-full flex flex-col space-y-4 mt-4">
     <div class="flex space-x-2">
       <input
         type="text"
         placeholder="Name"
+        name="name"
         class="w-full border border-gray-300 bg-white rounded-xl p-4 placeholder:tracking-widest"
       />
       <input
         type="email"
         placeholder="Email"
+        name="email"
         class="w-full border border-gray-300 bg-white rounded-xl p-4 placeholder:tracking-widest"
       />
     </div>
     <textarea
       rows={8}
       placeholder="Nachricht"
+      name="message"
       class="w-full border border-gray-300 bg-white rounded-xl p-4 placeholder:tracking-widest"
     ></textarea>
 
     <div class="flex items-center text-xs md:text-sm space-x-2">
-      <input type="checkbox" name="privacy-checkbox" id="privacy-checkbox"/><label for="privacy-checkbox"
+      <input
+        type="checkbox"
+        name="privacy-checkbox"
+        id="privacy-checkbox"
+      /><label for="privacy-checkbox"
         >Ich habe die Datenschutzerklärung gelesen und akzeptiere diese.
       </label>
     </div>
 
     <button
       class="px-4 mr-auto bg-brand-500 text-white rounded-md py-3 font-medium tracking-wide hover:bg-brand-700 transition-colors duration-100 ease-out hover relative"
+      type="submit"
     >
       Anfrage abschicken
     </button>
-  </div>
+  </form>
 </div>
+
+<script>
+  const form = document.querySelector("form");
+  const privacyCheckbox = document.querySelector("#privacy-checkbox");
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      console.log({
+        form,
+        formData,
+        data,
+      });
+    });
+  }
+</script>
