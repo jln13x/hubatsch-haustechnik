@@ -2,9 +2,13 @@
 import ContactInfo from "./ContactInfo.astro";
 ---
 
-<div class="flex flex-col w-full lg:w-[60%] xl:w-[40%] lg:mt-0">
+<div
+  class="flex flex-col w-full lg:w-[60%] xl:w-[40%] lg:mt-0"
+  id="joern-quote"
+>
   <div
-    class="flex rounded-xl w-full p-4 drop-shadow-lg shadow-inner bg-neutral-50 relative"
+    class="flex rounded-xl w-full p-4 drop-shadow-lg shadow-inner bg-neutral-50 relative invisible translate-x-full opacity-0 transition-all duration-1000 [&.show]:visible [&.show]:translate-x-0 [&.show]:opacity-100"
+    id="quote-container"
   >
     <div class="text-sm xs:text-base md:text-lg">
       <p>
@@ -22,12 +26,41 @@ import ContactInfo from "./ContactInfo.astro";
     >
       <img
         src="huby.png"
-        alt="Joern"
+        alt="Bild von Jörn Hubatsch"
         width={1405}
         height={1676}
-        class="drop-shadow-lg"
+        class="drop-shadow-lg invisible translate-x-full opacity-0 transition-all duration-1000 delay-500 [&.show]:visible [&.show]:translate-x-0 [&.show]:opacity-100"
       />
     </div>
   </div>
   <ContactInfo />
 </div>
+
+<script>
+  const quote = document.querySelector<HTMLElement>("#joern-quote");
+
+  if (quote) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = quote.querySelector("img");
+          const quoteContainer = quote.querySelector("#quote-container");
+          const contactInfo = quote.querySelector("#contact-info");
+
+          if (quoteContainer) {
+            quoteContainer.classList.add("show");
+          }
+
+          if (img) {
+            img.classList.add("show");
+          }
+
+          if (contactInfo) {
+            contactInfo.classList.add("show");
+          }
+        }
+      });
+    });
+    observer.observe(quote);
+  }
+</script>
