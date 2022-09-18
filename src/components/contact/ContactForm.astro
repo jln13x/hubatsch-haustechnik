@@ -1,65 +1,200 @@
-<div class="w-full lg:w-[40%] xl:w-[60%] mt-12 lg:mt-0">
+---
+import Input from "../Input.astro";
+---
+
+<div class="w-full lg:w-[40%] xl:w-[60%] mt-12 lg:mt-0 relative">
   <p class="text-center lg:text-left">
     Füllen Sie das Kontaktformular aus und wir werden uns umgehend bei Ihnen
     melden.
   </p>
-  <form class="h-full flex flex-col space-y-4 mt-4">
-    <div class="flex space-x-2">
-      <input
+  <form class="h-full flex flex-col mt-4" data-state="idle">
+    <div
+      class="flex flex-col space-y-4 justify-start md:flex-row md:space-y-0 md:space-x-8"
+    >
+      <Input
+        label="Name"
+        placeholder="Name eingeben..."
         type="text"
-        placeholder="Name"
+        required
         name="name"
-        class="w-full border border-gray-300 bg-white rounded-xl p-4 placeholder:tracking-widest"
       />
-      <input
+      <Input
+        label="E-Mail"
+        placeholder="E-Mail eingeben..."
         type="email"
-        placeholder="Email"
         name="email"
-        class="w-full border border-gray-300 bg-white rounded-xl p-4 placeholder:tracking-widest"
+        required
+      />
+      <Input
+        label="Telefonnummer"
+        placeholder="Telefonnummer eingeben..."
+        type="tel"
+        name="phone"
       />
     </div>
-    <textarea
-      rows={8}
-      placeholder="Nachricht"
-      name="message"
-      class="w-full border border-gray-300 bg-white rounded-xl p-4 placeholder:tracking-widest"
-    ></textarea>
+    <div class="mt-4 w-full">
+      <label for="textarea-contact-form" class="sr-only"> Nachricht</label>
+      <textarea
+        id="textarea-contact-form"
+        rows={8}
+        placeholder="Nachricht eingeben..."
+        name="message"
+        class="rounded-xl resize-none border-2 border-neutral-400 focus:border-brand-500 focus:ring-0 focus:outline-none placeholder:opacity-40 w-full transition-colors selection:bg-neutral-100"
+        minlength="10"
+        required></textarea>
+    </div>
 
     <div class="flex items-center text-xs md:text-sm space-x-2">
       <input
         type="checkbox"
-        name="privacy-checkbox"
+        name="privacy"
         id="privacy-checkbox"
+        class="checked:bg-brand-500 focus:bg-brand-500 text-brand-500 focus:outline-brand-500 focus:ring-0"
+        required
       /><label for="privacy-checkbox"
         >Ich habe die Datenschutzerklärung gelesen und akzeptiere diese.
       </label>
     </div>
 
     <button
-      class="px-4 mr-auto bg-brand-500 text-white rounded-md py-3 font-medium tracking-wide hover:bg-brand-700 transition-colors duration-100 ease-out hover relative"
+      class="px-4 bg-brand-500 text-white rounded-md py-3 font-medium tracking-wide enabled:hover:bg-brand-700 transition-colors duration-100 ease-out hover relative mr-auto mt-6 disabled:opacity-40"
       type="submit"
     >
       Anfrage abschicken
     </button>
+    <div
+      class="absolute inset-0 bg-black/80 rounded-xl -m-2 hidden"
+      id="overlay"
+    >
+      <!-- Loading -->
+      <svg
+        class="animate-spin h-8 w-8 text-brand-500 hidden contact-loading"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+
+      <!-- Success -->
+      <div
+        class="text-emerald-500 text-center hidden flex-col items-center contact-success"
+      >
+        <svg
+          class="w-12 h-12"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <p class="font-bold mt-2">
+          Ihre Anfrage wurde erfolgreich abgeschickt!
+        </p>
+      </div>
+
+      <!-- Error -->
+      <div
+        class="text-rose-500 text-center hidden flex-col items-center contact-error"
+      >
+        <svg
+          class="w-12 h-12"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <p class="font-bold mt-1">
+          Es ist ein Fehler aufgetreten! Bitte probieren Sie es erneut!
+        </p>
+        <p class="text-sm">
+          Sollte das Problem bestehen bleiben, lassen Sie es uns bitte wissen.
+        </p>
+      </div>
+    </div>
   </form>
 </div>
 
 <script>
   const form = document.querySelector("form");
-  const privacyCheckbox = document.querySelector("#privacy-checkbox");
 
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      if (form.dataset.state !== "idle") return;
 
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
 
-      console.log({
-        form,
-        formData,
-        data,
-      });
+      const submitButton = form.querySelector<HTMLButtonElement>(
+        "button[type='submit']"
+      );
+
+      if (!submitButton) return;
+
+      submitButton.disabled = true;
+
+      form.dataset.state = "loading";
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) throw new Error("Error while sending request");
+
+        form.dataset.state = "success";
+      } catch (e) {
+        form.dataset.state = "error";
+
+        setTimeout(() => {
+          form.dataset.state = "idle";
+          submitButton.disabled = false;
+        }, 5000);
+      }
     });
   }
 </script>
+
+<style>
+  form[data-state="loading"] {
+    @apply pointer-events-none;
+  }
+
+  form:not([data-state="idle"]) #overlay {
+    @apply grid place-items-center;
+  }
+
+  form[data-state="loading"] .contact-loading {
+    @apply flex;
+  }
+
+  form[data-state="success"] .contact-success {
+    @apply flex;
+  }
+
+  form[data-state="error"] .contact-error {
+    @apply flex;
+  }
+</style>
