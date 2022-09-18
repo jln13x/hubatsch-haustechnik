@@ -1,6 +1,7 @@
 ---
 import Container from "./Container.astro";
 import NavItem from "./NavItem.astro";
+import NavItems from "./NavItems.astro";
 ---
 
 <header
@@ -13,21 +14,7 @@ import NavItem from "./NavItem.astro";
       </div>
       <nav class="justify-end text-white hidden md:flex md:ml-auto">
         <ul class="flex space-x-8">
-          <li>
-            <NavItem href="/" title="Start" />
-          </li>
-          <li>
-            <NavItem href="#leistungen" title="Leistungen" />
-          </li>
-          <li>
-            <NavItem href="#rezensionen" title="Rezensionen" />
-          </li>
-          <li>
-            <NavItem href="#kontakt" title="Kontakt" />
-          </li>
-          <li>
-            <NavItem href="/" title="Jobs" />
-          </li>
+          <NavItems />
         </ul>
       </nav>
 
@@ -74,21 +61,7 @@ import NavItem from "./NavItem.astro";
           <div class="relative pt-8 h-full">
             <Container>
               <ul class="flex flex-col space-y-6">
-                <li>
-                  <NavItem href="/" title="Start" />
-                </li>
-                <li>
-                  <NavItem href="#leistungen" title="Leistungen" />
-                </li>
-                <li>
-                  <NavItem href="#rezensionen" title="Rezensionen" />
-                </li>
-                <li>
-                  <NavItem href="#kontakt" title="Kontakt" />
-                </li>
-                <li>
-                  <NavItem href="/" title="Jobs" />
-                </li>
+                <NavItems />
               </ul>
             </Container>
             <div
