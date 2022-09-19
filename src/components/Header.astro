@@ -143,13 +143,17 @@ import NavItems from "./NavItems.astro";
   };
 
   if (menuButton) {
-    menuButton.addEventListener("click", menuListener);
+    menuButton.addEventListener("click", menuListener, {
+      passive: true,
+    });
   }
 
   const navItems = document.querySelectorAll<HTMLElement>("#menu-nav nav a");
 
   // close the menu
   navItems.forEach((item) => {
-    item.addEventListener("click", menuListener);
+    item.addEventListener("click", menuListener, {
+      passive: true,
+    });
   });
 </script>

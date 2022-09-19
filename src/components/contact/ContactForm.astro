@@ -135,45 +135,51 @@ import Input from "../Input.astro";
   const form = document.querySelector("form");
 
   if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    form.addEventListener(
+      "submit",
+      async (e) => {
+        e.preventDefault();
 
-      if (form.dataset.state !== "idle") return;
+        if (form.dataset.state !== "idle") return;
 
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
 
-      const submitButton = form.querySelector<HTMLButtonElement>(
-        "button[type='submit']"
-      );
+        const submitButton = form.querySelector<HTMLButtonElement>(
+          "button[type='submit']"
+        );
 
-      if (!submitButton) return;
+        if (!submitButton) return;
 
-      submitButton.disabled = true;
+        submitButton.disabled = true;
 
-      form.dataset.state = "loading";
+        form.dataset.state = "loading";
 
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
 
-        if (!response.ok) throw new Error("Error while sending request");
+          if (!response.ok) throw new Error("Error while sending request");
 
-        form.dataset.state = "success";
-      } catch (e) {
-        form.dataset.state = "error";
+          form.dataset.state = "success";
+        } catch (e) {
+          form.dataset.state = "error";
 
-        setTimeout(() => {
-          form.dataset.state = "idle";
-          submitButton.disabled = false;
-        }, 5000);
+          setTimeout(() => {
+            form.dataset.state = "idle";
+            submitButton.disabled = false;
+          }, 5000);
+        }
+      },
+      {
+        passive: true,
       }
-    });
+    );
   }
 </script>
 

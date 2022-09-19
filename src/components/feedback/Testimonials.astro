@@ -32,10 +32,12 @@ const testimonals = [
   <div class="flex w-full grow items-start">
     {
       testimonals.map((t) => (
-        <div class="p-4 rounded-md w-full md:w-1/2 lg:w-1/3 shrink-0 [&.is-snap]:opacity-100 opacity-40 cursor-grab duration-300 ease-in-out [&:not(.is-snap)]:hover:opacity-60 transition-colors ">
-          <p class="tracking-wide text-center text-sm md:text-base ">{t.text}</p>
+        <div class="w-full shrink-0 cursor-grab rounded-md p-4 opacity-40 transition-colors duration-300 ease-in-out md:w-1/2 lg:w-1/3 [&.is-snap]:opacity-100 [&:not(.is-snap)]:hover:opacity-60 ">
+          <p class="text-center text-sm tracking-wide md:text-base ">
+            {t.text}
+          </p>
           <div class="mt-4 flex flex-col items-center">
-            <p class="font-bold mt-1 text-neutral-300">- {t.author}</p>
+            <p class="mt-1 font-bold text-neutral-300">- {t.author}</p>
           </div>
         </div>
       ))
@@ -60,7 +62,9 @@ const testimonals = [
     );
 
     embla.slideNodes().forEach((slide, idx) => {
-      slide.addEventListener("click", () => embla.scrollTo(idx));
+      slide.addEventListener("click", () => embla.scrollTo(idx), {
+        passive: true,
+      });
     });
   }
 </script>
