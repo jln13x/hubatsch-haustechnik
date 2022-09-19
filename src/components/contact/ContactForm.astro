@@ -9,7 +9,7 @@ import Input from "../Input.astro";
   </p>
   <form class="h-full flex flex-col mt-4" data-state="idle">
     <div
-      class="flex flex-col space-y-4 justify-start md:flex-row md:space-y-0 md:space-x-8"
+      class="flex flex-col md:flex-row md:space-x-8 lg:flex-col lg:space-x-0 space-y-4 justify-start xl:flex-row md:space-y-0 xl:space-x-8"
     >
       <Input
         label="Name"
@@ -44,14 +44,14 @@ import Input from "../Input.astro";
         required></textarea>
     </div>
 
-    <div class="flex items-center text-xs md:text-sm space-x-2">
+    <div class="flex items-center text-xs md:text-sm space-x-2 h-12">
       <input
         type="checkbox"
         name="privacy"
         id="privacy-checkbox"
         class="checked:bg-brand-500 focus:bg-brand-500 text-brand-500 focus:outline-brand-500 focus:ring-0"
         required
-      /><label for="privacy-checkbox"
+      /><label for="privacy-checkbox" class="h-full flex items-center"
         >Ich habe die Datenschutzerklärung gelesen und akzeptiere diese.
       </label>
     </div>
@@ -135,45 +135,48 @@ import Input from "../Input.astro";
   const form = document.querySelector("form");
 
   if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    form.addEventListener(
+      "submit",
+      async (e) => {
+        e.preventDefault();
 
-      if (form.dataset.state !== "idle") return;
+        if (form.dataset.state !== "idle") return;
 
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
 
-      const submitButton = form.querySelector<HTMLButtonElement>(
-        "button[type='submit']"
-      );
+        const submitButton = form.querySelector<HTMLButtonElement>(
+          "button[type='submit']"
+        );
 
-      if (!submitButton) return;
+        if (!submitButton) return;
 
-      submitButton.disabled = true;
+        submitButton.disabled = true;
 
-      form.dataset.state = "loading";
+        form.dataset.state = "loading";
 
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
 
-        if (!response.ok) throw new Error("Error while sending request");
+          if (!response.ok) throw new Error("Error while sending request");
 
-        form.dataset.state = "success";
-      } catch (e) {
-        form.dataset.state = "error";
+          form.dataset.state = "success";
+        } catch (e) {
+          form.dataset.state = "error";
 
-        setTimeout(() => {
-          form.dataset.state = "idle";
-          submitButton.disabled = false;
-        }, 5000);
-      }
-    });
+          setTimeout(() => {
+            form.dataset.state = "idle";
+            submitButton.disabled = false;
+          }, 5000);
+        }
+      },
+    );
   }
 </script>
 

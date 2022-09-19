@@ -9,9 +9,14 @@ import NavItems from "./NavItems.astro";
 >
   <Container>
     <div class="flex items-center">
-      <div class="w-28 md:w-40 shrink-0">
-        <img src="/company-logo.svg" alt="Logo von Hubatsch Haustechnik" />
-      </div>
+      <a class="w-28 md:w-40 shrink-0" href="/">
+        <img
+          src="/company-logo.svg"
+          alt="Logo von Hubatsch Haustechnik"
+          height={61}
+          width={160}
+        />
+      </a>
       <nav class="justify-end text-white hidden md:flex md:ml-auto">
         <ul class="flex space-x-8">
           <NavItems />
@@ -138,13 +143,17 @@ import NavItems from "./NavItems.astro";
   };
 
   if (menuButton) {
-    menuButton.addEventListener("click", menuListener);
+    menuButton.addEventListener("click", menuListener, {
+      passive: true,
+    });
   }
 
   const navItems = document.querySelectorAll<HTMLElement>("#menu-nav nav a");
 
   // close the menu
   navItems.forEach((item) => {
-    item.addEventListener("click", menuListener);
+    item.addEventListener("click", menuListener, {
+      passive: true,
+    });
   });
 </script>

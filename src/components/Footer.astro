@@ -7,22 +7,27 @@ import Logo from "./Logo.astro";
   <Container>
     <div class="py-6 flex justify-between">
       <div class="flex items-end">
-        <Logo width={80} />
+        <img
+          src="/company-logo.svg"
+          alt="Logo von Hubatsch Haustechnik"
+          width={80}
+          height={30}
+        />
       </div>
       <div class="flex space-x-2 items-end">
         <a
           href="/jobs"
-          class="text-neutral-600 text-xs md:text-sm hover:text-white transition-colors"
+          class="text-neutral-400 text-xs md:text-sm hover:text-white transition-colors"
           >Jobs</a
         >
         <a
           href="/impressum"
-          class="text-neutral-600 text-xs md:text-sm hover:text-white transition-colors"
+          class="text-neutral-400 text-xs md:text-sm hover:text-white transition-colors"
           >Impressum</a
         >
         <a
           href="/datenschutz"
-          class="text-neutral-600 text-xs md:text-sm hover:text-white transition-colors"
+          class="text-neutral-400 text-xs md:text-sm hover:text-white transition-colors"
           >Datenschutz</a
         >
       </div>
