@@ -92,6 +92,17 @@ import NavItems from "./NavItems.astro";
   const menuButton = document.querySelector("#menu-nav button");
   const nav = document.querySelector<HTMLElement>("#menu-nav nav");
 
+  if (window.location.pathname === "/") {
+    const startNavItems = document.querySelectorAll("a[title='Start']");
+    startNavItems.forEach((n) => n.classList.add("active"));
+  }
+
+  if (window.location.pathname === "/jobs") {
+    const jobNavItems = document.querySelectorAll("a[title='Jobs']");
+
+    jobNavItems.forEach((n) => n.classList.add("active"));
+  }
+
   const toggleMultiple = (element: HTMLElement, classes: string[]) => {
     classes.forEach((className) => {
       element.classList.toggle(className);
