@@ -13,6 +13,11 @@ const integrations = [
 ];
 
 console.log(process.env.PUBLIC_VERCEL_ENV);
+console.log({
+  env: process.env,
+});
+
+console.log(process.env.VERCEL_ENV);
 
 if (process.env.PUBLIC_VERCEL_ENV === "production") {
   integrations.push(compress());
