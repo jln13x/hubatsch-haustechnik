@@ -1,10 +1,29 @@
 ---
+import Contact from "../components/jobs/Contact.astro";
+import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import Offerings from "../components/jobs/Offerings.astro";
 ---
 
 <Layout title="Jobs">
   <div class="h-24 bg-black"></div>
-  <main>
-    <h1>Jobs</h1>
-  </main>
+  <section class="py-12">
+    <Container>
+      <h1 class="text-3xl md:text-4xl text-center">
+        Karriere bei <strong class="text-brand-500">Hubatsch Haustechnik</strong
+        >
+      </h1>
+
+      <p class="mt-6 text-neutral-800">
+        Sorge dafür, dass bei bei unseren Kunden ein Licht an geht. Profitiere
+        von einen spannenden Arbeitsumfeld und einem Team, dass sich gegenseitig
+        unterstützt. Wir bieten dir eine abwechslungsreiche Tätigkeit mit
+        Aufträgen für namenshafte Kunden wie z.B. Werder Bremen oder Airbus.
+      </p>
+
+      <Offerings />
+
+      <Contact />
+    </Container>
+  </section>
 </Layout>

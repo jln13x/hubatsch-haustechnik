@@ -18,9 +18,12 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <Header />
-  <body>
-    <slot />
+  <body class="flex min-h-screen flex-col">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
     <style is:global>
       h2 {
         @apply text-3xl md:text-5xl;
@@ -30,5 +33,4 @@ const { title } = Astro.props;
       }
     </style>
   </body>
-  <Footer />
 </html>
