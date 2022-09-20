@@ -1,19 +1,28 @@
 ---
 import Mail from "../icons/Mail.astro";
+import Mobile from "../icons/Mobile.astro";
 import Phone from "../icons/Phone.astro";
 import Pin from "../icons/Pin.astro";
 ---
 
 <div
-  class="flex text-center text-sm justify-center bg-black text-neutral-300 lg:text-lg rounded-xl p-4 space-y-2 flex-col ml-auto lg:-translate-y-8 shadow-lg shadow-neutral-900/60 bg-opacity-95 mr-4 -translate-y-6 invisible translate-x-full opacity-0 transition-all duration-1000 [&.show]:visible [&.show]:translate-x-0 [&.show]:opacity-100 delay-1000"
+  class="flex text-center text-sm justify-center bg-black text-neutral-300 lg:text-lg rounded-xl p-4 space-y-2 flex-col ml-auto lg:-translate-y-8 shadow-lg shadow-neutral-900/60 bg-opacity-95 mr-4 -translate-y-4 xs:-translate-y-6 invisible translate-x-full opacity-0 transition-all duration-1000 [&.show]:visible [&.show]:translate-x-0 [&.show]:opacity-100 delay-1000"
   id="contact-info"
 >
   <div class="flex space-x-1.5 items-center">
     <Phone />
     <a
+      href="tel:+4942215848114"
+      class="hover:underline hover:underline-offset-4 hover:decoration-brand-500"
+      >+49 (4221) 58 48 114</a
+    >
+  </div>
+  <div class="flex space-x-1.5 items-center">
+    <Mobile />
+    <a
       href="tel:491729421474"
       class="hover:underline hover:underline-offset-4 hover:decoration-brand-500"
-      >0172 94 21 474</a
+      >+49 (172) 94 21 474</a
     >
   </div>
   <div class="flex space-x-1.5 items-center">
