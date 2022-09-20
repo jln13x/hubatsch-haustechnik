@@ -1,6 +1,5 @@
 ---
 import Container from "./Container.astro";
-import NavItem from "./NavItem.astro";
 import NavItems from "./NavItems.astro";
 ---
 
@@ -9,7 +8,11 @@ import NavItems from "./NavItems.astro";
 >
   <Container>
     <div class="flex items-center">
-      <a class="w-28 md:w-40 shrink-0" href="/">
+      <a
+        class="w-28 md:w-40 shrink-0"
+        href="/"
+        aria-label="Zum Start navigieren"
+      >
         <img
           src="/company-logo.svg"
           alt="Logo von Hubatsch Haustechnik"
@@ -27,6 +30,7 @@ import NavItems from "./NavItems.astro";
         <button
           class="p-2 text-xs flex space-x-2 flex-col items-center rounded-xl space-y-2 ml-auto"
           title="Navigationsmenü öffnen"
+          aria-label="Navigationsmenü öffnen"
         >
           <svg
             viewBox="0 0 80 37"
