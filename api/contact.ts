@@ -78,10 +78,10 @@ const handler: VercelApiHandler = async (req, res) => {
 };
 
 const schema = z.object({
-  name: z.string(),
-  email: z.string().email(),
+  name: z.string().min(1),
+  email: z.string().email().min(1),
   phone: z.string().optional(),
-  message: z.string(),
+  message: z.string().min(10),
   privacy: z.literal("on"),
 });
 
