@@ -1,4 +1,5 @@
 ---
+import { Picture } from "astro-imagetools/components";
 import ContactInfo from "./ContactInfo.astro";
 ---
 
@@ -24,14 +25,17 @@ import ContactInfo from "./ContactInfo.astro";
     <div
       class="h-full w-[40%] xs:w-[30%] md:w-[25%] -mr-4 mt-auto -mb-4 shrink-0 sm:-mt-[20%] lg:w-[30%] lg:-mt-[10%] xl:w-[40%] xl:-mt-[9%] 2xl:w-[40%] 2xl:-mt-[28%]"
     >
-      <img
-        src="/huby.webp"
-        alt="Bild von Jörn Hubatsch"
-        width={491}
-        height={900}
+      <div
+        data-img="joern"
         class="drop-shadow-lg invisible translate-x-full opacity-0 transition-all duration-1000 delay-500 [&.show]:visible [&.show]:translate-x-0 [&.show]:opacity-100"
-        loading="lazy"
-      />
+      >
+        <Picture
+          src="/huby.webp"
+          alt="Bild von Jörn Hubatsch"
+          width={491}
+          height={900}
+        />
+      </div>
     </div>
   </div>
   <ContactInfo />
@@ -44,7 +48,7 @@ import ContactInfo from "./ContactInfo.astro";
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const img = quote.querySelector("img");
+          const img = quote.querySelector("[data-img='joern']");
           const quoteContainer = quote.querySelector("#quote-container");
           const contactInfo = quote.querySelector("#contact-info");
 

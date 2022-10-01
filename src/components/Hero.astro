@@ -1,6 +1,7 @@
 ---
 import Container from "./Container.astro";
 import Link from "./Link.astro";
+import { Picture } from "astro-imagetools/components";
 ---
 
 <section
@@ -27,7 +28,7 @@ import Link from "./Link.astro";
       <Link href="#kontakt">Jetzt Kontakt aufnehmen</Link>
     </Container>
   </div>
-  <img
+  <!-- <img
     src="/hero.webp"
     width={4096}
     height={2731}
@@ -35,7 +36,21 @@ import Link from "./Link.astro";
     alt="My local image"
     class="h-screen w-screen object-cover bg-black"
     loading="eager"
-  />
+  /> -->
+
+  <div class="h-screen w-screen">
+    <Picture
+      src="/hero.webp"
+      alt="Bild von einem Elektriker vor einem Schaltschrank"
+      loading="eager"
+      width={4096}
+      height={2731}
+      sizes="100vw 100vh"
+      objectFit="cover"
+      layout="fill"
+    />
+  </div>
+
   <div
     class="absolute inset-0 bg-black/90 z-50 transition-all animate-[fadeout_1500ms_ease-in-out_forwards] pointer-events-none"
   >
