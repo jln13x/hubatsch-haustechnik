@@ -51,8 +51,14 @@ import Input from "../Input.astro";
         id="privacy-checkbox"
         class="checked:bg-brand-500 focus:bg-brand-500 text-brand-500 focus:outline-brand-500 focus:ring-0 rounded-md"
         required
-      /><label for="privacy-checkbox" class="h-full flex items-center"
-        >Ich habe die Datenschutzerklärung gelesen und akzeptiere diese.
+      />
+      <label for="privacy-checkbox" class="h-full flex items-center"
+        >Ich habe die&nbsp;<a
+          href="/datenschutz"
+          target="_blank"
+          class="flex underline-offset-2 decoration-brand-500 underline font-medium"
+          >Datenschutzerklärung</a
+        >&nbsp;gelesen und akzeptiere diese.
       </label>
     </div>
 
